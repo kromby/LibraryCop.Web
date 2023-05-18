@@ -33,13 +33,11 @@ jobs:
           # api_location: "" # Api source code path - optional
           output_location: "build/static" # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
-      - name: Download artifact 
-        uses: Azure/DownloadPipelineArtifact@2
-        with:
-          buildType: 'current'
-          artifactName: 'functionapp'
-          targetPath: '$(Pipeline.Workspace)'
-        
+      - task: PublishPipelineArtifact@1
+        inputs:
+          targetPath: '$(Pipeline.Workspace)' # string. Alias: path. Required. File or directory path. Default: $(Pipeline.Workspace).
+          #artifact: # string. Alias: artifactName. Artifact name. 
+          publishLocation: 'pipeline
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
