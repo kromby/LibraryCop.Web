@@ -34,7 +34,7 @@ jobs:
           output_location: "build/static" # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
       - name: Download artifact 
-        uses: DownloadPipelineArtifact@2
+        uses: Azure/DownloadPipelineArtifact@2
         with:
           buildType: 'current'
           artifactName: 'functionapp'
