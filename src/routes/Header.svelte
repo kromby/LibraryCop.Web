@@ -70,10 +70,10 @@
 			left: 0;
 			width: 100%;
 			height: 100%;
-			background: url("/images/overlay.png");
+			background: url("/css/images/overlay.png");
 		}
 
-		.homepage #header {
+		/* .homepage #header {
 			height: 10em;
-		}
+		} */
 </style>
